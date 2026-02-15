@@ -11,7 +11,7 @@ import gallery3 from './assets/gallery-3.jpeg';
 import gallery4 from './assets/gallery-4.jpeg';
 
 const App = () => {
-  const [theme, setTheme] = useState('shade'); // Defaults to 'shade' for that premium luxury look
+  const [theme, setTheme] = useState('sail'); // Defaults to 'sail' (Light Mode) as requested
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('All');
   const [isExploring, setIsExploring] = useState(false);
@@ -178,9 +178,9 @@ const App = () => {
 
         <div className="z-10 text-center max-w-6xl px-4">
           <h1 className="text-[15vw] md:text-[9vw] font-black leading-[0.85] md:leading-[0.8] tracking-tighter uppercase mb-6 md:mb-8 reveal opacity-0 translate-y-10 transition-all duration-1000">
-            {isSail ? 'Sail Through' : 'Shade'} <br />
+            {isSail ? 'Sail Through' : 'Shade The'} <br />
             <span className={isSail ? 'text-blue-600' : 'text-slate-500'}>
-              {isSail ? 'The Noise' : 'The Competition'}
+              {isSail ? 'The Noise' : 'Competition'}
             </span>
           </h1>
           <p className="text-base md:text-xl max-w-2xl mx-auto opacity-60 mb-10 md:mb-12 reveal opacity-0 translate-y-10 transition-all duration-1000 delay-300 leading-relaxed px-4 md:px-0">
@@ -200,7 +200,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-end mb-20 md:mb-32 reveal opacity-0 translate-y-10 transition-all">
             <div>
-              <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em] opacity-40 mb-4 md:mb-6 block italic">Premier Agency Residency</span>
+              <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em] opacity-40 mb-4 md:mb-6 block italic">Premier Agency Client</span>
               <h2 className="text-5xl md:text-[9rem] font-black uppercase tracking-tighter leading-none">
                 Calista <br /> Luxury.
               </h2>
@@ -308,7 +308,10 @@ const App = () => {
           <div className={`min-w-[280px] sm:min-w-[340px] md:min-w-[550px] aspect-[4/5] rounded-[2.5rem] md:rounded-[3.5rem] flex flex-col items-center justify-center text-center p-10 md:p-16 border-2 border-dashed ${isSail ? 'border-slate-200' : 'border-slate-800'
             }`}>
             <h4 className="text-2xl md:text-4xl font-black uppercase mb-8 md:mb-10 italic opacity-20">The Next <br /> Horizon</h4>
-            <button className={`px-8 py-4 md:px-10 md:py-5 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest ${isSail ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'}`}>
+            <button
+              onClick={(e) => scrollToSection(e, 'connect')}
+              className={`px-8 py-4 md:px-10 md:py-5 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest transition-all active:scale-95 ${isSail ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'}`}
+            >
               Inquire Within
             </button>
           </div>
@@ -335,7 +338,7 @@ const App = () => {
             </div>
             <div className="text-left">
               <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em] opacity-40 mb-4 md:mb-8 block italic">Status</span>
-              <p className="text-base md:text-lg font-bold opacity-60 tracking-tight">Open for Select 2024 Residencies</p>
+              <p className="text-base md:text-lg font-bold opacity-60 tracking-tight">Open for Select 2024 Clients</p>
             </div>
           </div>
         </div>
